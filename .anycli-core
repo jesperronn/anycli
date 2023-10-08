@@ -1,0 +1,9 @@
+# `anycli` command file
+# copy this file to your project and add commands that should be discoverable
+# by `anycli tool`
+
+# in anycli project, these are CORE commands and must be present for `anycli` to work:
+command:alias,"bin/alias"
+command:commands,"bin/commands"
+command:discover,"bin/discover"
+command:setup,"bin/setup"

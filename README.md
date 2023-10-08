@@ -2,28 +2,50 @@
 
 command line access to your project utilities. This tool has the abilities that YOU have in the current project folder. Easily accessible.
 
-`anycli`` is a wrapper around commands across all your checked out projects in the selected parent folder.
+`anycli` is a wrapper around commands across all your checked out projects in the selected parent folder.
 
 
 imagine you have another project and in that project exists a folder
 ```
-ansible-project-a
-├── contrib/anycli
-│   ├── monitor
-│   ├── ...
+project-a
+├── contrib/.anycli
+project-b
+├── contrib/.anycli
+project-c
+├── contrib/.anycli
+```
 
+in this case we put this line in `project-a/contrib/.anycli`:
+```
+command:monitor,"bin/monitor"
 ```
 
 Then you can run `monitor` command from anywhere in your system like this:
 
 ```
 anycli monitor
+
+# will call
+project-a/bin/monitor
 ```
 
+
 Thats it. `anycli` will find the command in your directory and run it.
+Any arguments added after `command` will be forwarded to the command. Example
+
+
+```
+anycli monitor --env staging
+```
+
+will result in the call to
+```
+project-a/bin/monitor --env staging
+```
+
 
 anycli is context aware. It will only discover commands in the same parent folder
-as you installed it
+as you installed it.
 
 
 

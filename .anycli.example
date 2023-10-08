@@ -1,0 +1,18 @@
+# `anycli` command file
+# copy this file to your project and add commands that should be discoverable
+# by `anycli tool`
+
+# copy this file and name it `.anycli`.
+# You can put files directly parent folder or subfolders `bin` or `contrib`
+# - `.anycli`
+# - `bin/.anycli`
+# - `contrib/.anycli`
+#
+# All lines starting with `#` are ignored
+# Commands MUST start with `command:` and have at least two parts separated by comma:
+#
+# command:"monitor","bin/monitor"
+# |       |         |
+# |       |         └── the actual command to run (MUST be quoted)
+# |       └──────────── anycli command name (SHOULD be quoted)
+# └──────────────────── command: keyword
